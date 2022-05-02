@@ -1,0 +1,69 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplify5c97d7b4c3254-staging-31819-authRole",
+      "UnauthRoleArn": "arn:aws:iam::108638001991:role/amplify-amplify5c97d7b4c3254-staging-31819-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::108638001991:role/amplify-amplify5c97d7b4c3254-staging-31819-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-amplify5c97d7b4c3254-staging-31819-deployment",
+      "UnauthRoleName": "amplify-amplify5c97d7b4c3254-staging-31819-unauthRole",
+      "StackName": "amplify-amplify5c97d7b4c3254-staging-31819",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:108638001991:stack/amplify-amplify5c97d7b4c3254-staging-31819/30b24300-c37d-11ec-8bdb-0e6f1cf005cb",
+      "AmplifyAppId": "d1ubqqfghl2azr",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-amplify5c97d7b4c3254-staging-31819-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+    },
+    "categories": {
+      "function": {
+        "spotifyapi": {
+          "deploymentBucketName": "amplify-amplify5c97d7b4c3254-staging-31819-deployment",
+          "s3Key": "amplify-builds/spotifyapi-6c4b5845685038756e4d-build.zip"
+        },
+        "sendSummary": {
+          "deploymentBucketName": "amplify-amplify5c97d7b4c3254-staging-31819-deployment",
+          "s3Key": "amplify-builds/sendSummary-4971754e7a726539635a-build.zip"
+        },
+        "ceedescriptionappsynclayer": {
+          "deploymentBucketName": "amplify-amplify5c97d7b4c3254-staging-31819-deployment",
+          "s3Key": "amplify-builds/ceedescriptionappsynclayer-LambdaLayerVersion3895d116-build.zip"
+        }
+      },
+      "auth": {
+        "CeeDescription": {},
+        "true": {}
+      }
+    }
+  },
+  "production": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-ceedescription-production-192738-authRole",
+      "UnauthRoleArn": "arn:aws:iam::108638001991:role/amplify-ceedescription-production-192738-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::108638001991:role/amplify-ceedescription-production-192738-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-ceedescription-production-192738-deployment",
+      "UnauthRoleName": "amplify-ceedescription-production-192738-unauthRole",
+      "StackName": "amplify-ceedescription-production-192738",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:108638001991:stack/amplify-ceedescription-production-192738/57db2020-c939-11ec-bf75-0e251c2e552b",
+      "AmplifyAppId": "d1ubqqfghl2azr",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-ceedescription-production-192738-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+    },
+    "categories": {
+      "auth": {
+        "CeeDescription": {}
+      },
+      "function": {
+        "spotifyapi": {
+          "deploymentBucketName": "amplify-ceedescription-production-192738-deployment",
+          "s3Key": "amplify-builds/spotifyapi-6c4b5845685038756e4d-build.zip"
+        },
+        "sendSummary": {
+          "deploymentBucketName": "amplify-ceedescription-production-192738-deployment",
+          "s3Key": "amplify-builds/sendSummary-4971754e7a726539635a-build.zip"
+        },
+        "ceedescriptionappsynclayer": {
+          "deploymentBucketName": "amplify-ceedescription-production-192738-deployment",
+          "s3Key": "amplify-builds/ceedescriptionappsynclayer-LambdaLayerVersion7945b8a8-build.zip"
+        }
+      }
+    }
+  }
+}
