@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "api": {
+      "CeeDescription": [
+        "Query",
+        "Mutation"
+      ]
+    }
+  },
+  "lambdaLayers": [
+    {
+      "type": "ProjectLayer",
+      "resourceName": "ceedescriptionappsynclayer",
+      "version": "Always choose latest version",
+      "isLatestVersionSelected": true,
+      "env": "staging"
+    }
+  ]
+}

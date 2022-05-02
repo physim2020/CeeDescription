@@ -3,8 +3,66 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
+import "@aws-amplify/ui-react/styles.css";
+
+import React, { Props, PropsWithRef } from 'react';
+
+import dynamic from 'next/dynamic';
+
+import {
+  useQuery,
+  useMutation,
+  useQueryClient,
+  QueryClient,
+  QueryClientProvider,
+} from 'react-query'
+
+import axios from "axios";
+
+import {Auth} from 'aws-amplify';
+
+const ClientDependentComponent = dynamic(() => import('../components/ClientDependentComponent'), { ssr: false});
+// const StandardCard = dynamic(() => import('../src/ui-components/StandardCard'), { ssr: false});
+import { StandardCardCollection, EditProfile } from '../src/ui-components';
+
+const signUpFields = [
+  {
+    type: "email",
+    label: "custom_label",
+    placeholder: "Custom placeholder",
+    hint: null,
+    required: true,
+  },
+];
 
 const Home: NextPage = () => {
+  // const { data, isLoading, error } = useQuery("posts", async () => {
+  //   const user = await Auth.currentAuthenticatedUser()
+  //   const idToken = user.signInUserSession.idToken.jwtToken
+  //   console.log("fff");
+  //   console.log(idToken);
+  //   const headers = {headers: { Authorization: `Bearer ${idToken}`},}; 
+  //   console.log(headers);
+  //   const { data } = await axios.get(
+  //     "https://otv5e4loi7.execute-api.ap-northeast-1.amazonaws.com/staging/items",
+  //     // headers
+  //   );
+  //   return data;
+  // });
+  
+  const data = "hama";
+
+  console.log("a");
+  console.log(data);
+
+  // if (isLoading) {
+  //   return <div>Loading...</div>
+  // }
+
+  if (!data) {
+    return <div>Error Occured</div>
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -15,8 +73,20 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome to <a href="https://nextjs.org">Next.js! {data}</a>
         </h1>
+
+        <p className={styles.description}>
+          <Link href={'/ssr-demo'}>
+            <a>SSR Demo</a>
+          </Link>
+        </p>
+
+        <EditProfile />
+
+        <StandardCardCollection />
+
+        <ClientDependentComponent foo={''} />
 
         <p className={styles.description}>
           Get started by editing{' '}
