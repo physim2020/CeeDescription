@@ -7,7 +7,7 @@
 /* eslint-disable */
 import React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import { Flex, Icon, Text, View } from "@aws-amplify/ui-react";
+import { Flex, Icon, Image, Text, View } from "@aws-amplify/ui-react";
 export default function ItemCard2(props) {
   const { home, overrides, ...rest } = props;
   return (
@@ -46,6 +46,15 @@ export default function ItemCard2(props) {
           src={home?.image_url}
           {...getOverrideProps(overrides, "image 19")}
         ></View>
+        <Image
+          width="144px"
+          height="100px"
+          shrink="0"
+          position="relative"
+          padding="0px 0px 0px 0px"
+          src={home?.image_url}
+          {...getOverrideProps(overrides, "image")}
+        ></Image>
       </Flex>
       <Flex
         gap="10px"
