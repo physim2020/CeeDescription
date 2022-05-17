@@ -43,19 +43,19 @@
       "service": "Lambda",
       "dependsOn": [
         {
-          "category": "function",
-          "resourceName": "ceedescriptionappsynclayer",
-          "attributes": [
-            "Arn"
-          ]
-        },
-        {
           "category": "api",
           "resourceName": "CeeDescription",
           "attributes": [
             "GraphQLAPIIdOutput",
             "GraphQLAPIEndpointOutput",
             "GraphQLAPIKeyOutput"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "ceedescriptionappsynclayer",
+          "attributes": [
+            "Arn"
           ]
         }
       ]

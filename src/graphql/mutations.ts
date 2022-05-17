@@ -2,32 +2,6 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const batchAddTodo = /* GraphQL */ `
-  mutation BatchAddTodo($todo: TodoInput!) {
-    batchAddTodo(todo: $todo) {
-      id
-      name
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-    }
-  }
-`;
-export const directAddUser = /* GraphQL */ `
-  mutation DirectAddUser($user: TodoInput!) {
-    directAddUser(user: $user) {
-      id
-      name
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-    }
-  }
-`;
 export const createAnswer = /* GraphQL */ `
   mutation CreateAnswer(
     $input: CreateAnswerInput!

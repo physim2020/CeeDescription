@@ -19,15 +19,3 @@ type Home @model @auth(rules: [{allow: public}]) {
   image_url: String
   price: Float
 }
-
-input TodoInput {
-    id: ID
-    name: String!
-    description: String
-}
-
-type Mutation {
-    batchAddTodo(todo: TodoInput!): User
-    directAddUser(user: TodoInput!): User @function(name: "spotifyapi-${env}")
-}
- 

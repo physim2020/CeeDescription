@@ -29,9 +29,8 @@ export default function StandardCardCollection(props) {
     <Collection
       type="list"
       searchPlaceholder="Search..."
-      direction="column"
+      direction="row"
       alignItems="stretch"
-      justifyContent="left"
       items={items || []}
       {...rest}
       {...getOverrideProps(overrides, "StandardCardCollection")}

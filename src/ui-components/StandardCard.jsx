@@ -6,10 +6,18 @@
 
 /* eslint-disable */
 import React from "react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
+import {
+  getOverrideProps,
+  useNavigateAction,
+} from "@aws-amplify/ui-react/internal";
 import { Flex, Image, Text } from "@aws-amplify/ui-react";
 export default function StandardCard(props) {
   const { home, overrides, ...rest } = props;
+  const standardCardOnClick = useNavigateAction({
+    target: "_blank",
+    type: "url",
+    url: "/about",
+  });
   return (
     <Flex
       gap="0"
@@ -19,6 +27,9 @@ export default function StandardCard(props) {
       position="relative"
       padding="0px 0px 0px 0px"
       backgroundColor="rgba(255,255,255,1)"
+      onClick={() => {
+        standardCardOnClick();
+      }}
       {...rest}
       {...getOverrideProps(overrides, "StandardCard")}
     >
@@ -54,7 +65,7 @@ export default function StandardCard(props) {
         >
           <Text
             fontFamily="Inter"
-            fontSize="16px"
+            fontSize="20px"
             fontWeight="700"
             color="rgba(13,26,38,1)"
             lineHeight="20px"

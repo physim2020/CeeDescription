@@ -2,23 +2,6 @@
 /* eslint-disable */
 //  This file was automatically generated and should not be edited.
 
-export type TodoInput = {
-  id?: string | null,
-  name: string,
-  description?: string | null,
-};
-
-export type User = {
-  __typename: "User",
-  id: string,
-  name?: string | null,
-  createdAt: string,
-  updatedAt: string,
-  _version: number,
-  _deleted?: boolean | null,
-  _lastChangedAt: number,
-};
-
 export type CreateAnswerInput = {
   id?: string | null,
   title?: string | null,
@@ -140,6 +123,17 @@ export type ModelUserConditionInput = {
   and?: Array< ModelUserConditionInput | null > | null,
   or?: Array< ModelUserConditionInput | null > | null,
   not?: ModelUserConditionInput | null,
+};
+
+export type User = {
+  __typename: "User",
+  id: string,
+  name?: string | null,
+  createdAt: string,
+  updatedAt: string,
+  _version: number,
+  _deleted?: boolean | null,
+  _lastChangedAt: number,
 };
 
 export type UpdateUserInput = {
@@ -284,40 +278,6 @@ export type ModelHomeConnection = {
   items:  Array<Home | null >,
   nextToken?: string | null,
   startedAt?: number | null,
-};
-
-export type BatchAddTodoMutationVariables = {
-  todo: TodoInput,
-};
-
-export type BatchAddTodoMutation = {
-  batchAddTodo?:  {
-    __typename: "User",
-    id: string,
-    name?: string | null,
-    createdAt: string,
-    updatedAt: string,
-    _version: number,
-    _deleted?: boolean | null,
-    _lastChangedAt: number,
-  } | null,
-};
-
-export type DirectAddUserMutationVariables = {
-  user: TodoInput,
-};
-
-export type DirectAddUserMutation = {
-  directAddUser?:  {
-    __typename: "User",
-    id: string,
-    name?: string | null,
-    createdAt: string,
-    updatedAt: string,
-    _version: number,
-    _deleted?: boolean | null,
-    _lastChangedAt: number,
-  } | null,
 };
 
 export type CreateAnswerMutationVariables = {

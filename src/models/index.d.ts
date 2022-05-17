@@ -4,10 +4,6 @@ import { ModelInit, MutableModel, PersistentModelConstructor } from "@aws-amplif
 
 
 
-type UserMetaData = {
-  readOnlyFields: 'createdAt' | 'updatedAt';
-}
-
 type AnswerMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
 }
@@ -16,17 +12,12 @@ type QuestionMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
 }
 
-type HomeMetaData = {
+type UserMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
 }
 
-export declare class User {
-  readonly id: string;
-  readonly name?: string | null;
-  readonly createdAt?: string | null;
-  readonly updatedAt?: string | null;
-  constructor(init: ModelInit<User, UserMetaData>);
-  static copyOf(source: User, mutator: (draft: MutableModel<User, UserMetaData>) => MutableModel<User, UserMetaData> | void): User;
+type HomeMetaData = {
+  readOnlyFields: 'createdAt' | 'updatedAt';
 }
 
 export declare class Answer {
@@ -45,6 +36,15 @@ export declare class Question {
   readonly updatedAt?: string | null;
   constructor(init: ModelInit<Question, QuestionMetaData>);
   static copyOf(source: Question, mutator: (draft: MutableModel<Question, QuestionMetaData>) => MutableModel<Question, QuestionMetaData> | void): Question;
+}
+
+export declare class User {
+  readonly id: string;
+  readonly name?: string | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+  constructor(init: ModelInit<User, UserMetaData>);
+  static copyOf(source: User, mutator: (draft: MutableModel<User, UserMetaData>) => MutableModel<User, UserMetaData> | void): User;
 }
 
 export declare class Home {

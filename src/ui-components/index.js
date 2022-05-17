@@ -5,12 +5,14 @@
  **************************************************************************/
 
 export { default as HeroLayout1 } from "./HeroLayout1";
+export { default as ItemCard2Collection } from "./ItemCard2Collection";
 export { default as HeroLayout2 } from "./HeroLayout2";
 export { default as Features2x3 } from "./Features2x3";
 export { default as ReviewCard } from "./ReviewCard";
 export { default as ProductCard } from "./ProductCard";
 export { default as ItemCard } from "./ItemCard";
 export { default as ContactUs } from "./ContactUs";
+export { default as ItemCard2 } from "./ItemCard2";
 export { default as MarketingFooter } from "./MarketingFooter";
 export { default as MarketingPricing } from "./MarketingPricing";
 export { default as HeroLayout4 } from "./HeroLayout4";

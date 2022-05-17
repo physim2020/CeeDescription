@@ -19,11 +19,49 @@ import {
 
 import axios from "axios";
 
-import {Auth} from 'aws-amplify';
+import { Auth, Hub } from 'aws-amplify';
 
 const ClientDependentComponent = dynamic(() => import('../components/ClientDependentComponent'), { ssr: false});
 // const StandardCard = dynamic(() => import('../src/ui-components/StandardCard'), { ssr: false});
-import { StandardCardCollection, EditProfile } from '../src/ui-components';
+import { StandardCardCollection, EditProfile, StandardCard, ItemCard2Collection } from '../src/ui-components';
+import { atom, useRecoilState } from 'recoil'
+
+
+
+const textState = atom({
+  key: 'textState', // unique ID (with respect to other atoms/selectors)
+  default: '', // default value (aka initial value)
+  effects: [
+    () => {
+      const asyncLoad = async () => {
+        const user = await Auth.currentAuthenticatedUser()
+        const idToken = user.signInUserSession.idToken.jwtToken
+        console.log("fff");
+        console.log(idToken);
+        const headers = {headers: { Authorization: `Bearer ${idToken}`},}; 
+        console.log(headers);
+        try {
+          const { data } = await axios.get(
+            "https://otv5e4loi7.execute-api.ap-northeast-1.amazonaws.com/staging/items",
+            headers
+          );
+          console.log(data);
+        } catch (e) {
+          console.log(e);
+        }
+      }
+      asyncLoad();
+
+      Hub.listen("ui", (capsule) => {
+        console.log(capsule.payload.event);
+        if (capsule.payload.event === "actions:datastore:create:finished") {
+          // Do something after signout
+          console.log(capsule.payload.event);
+        }
+      });
+    },
+  ],
+});
 
 const signUpFields = [
   {
@@ -49,6 +87,12 @@ const Home: NextPage = () => {
   //   );
   //   return data;
   // });
+
+  const [text, setText] = useRecoilState(textState);
+
+  const onChange = (event: any) => {
+    setText(event.target.value);
+  };
   
   const data = "hama";
 
@@ -76,6 +120,12 @@ const Home: NextPage = () => {
           Welcome to <a href="https://nextjs.org">Next.js! {data}</a>
         </h1>
 
+        <div>
+      <input type="text" value={text} onChange={onChange} />
+      <br />
+      Echo: {text}
+    </div>
+
         <p className={styles.description}>
           <Link href={'/ssr-demo'}>
             <a>SSR Demo</a>
@@ -84,7 +134,11 @@ const Home: NextPage = () => {
 
         <EditProfile />
 
-        <StandardCardCollection />
+        <ItemCard2Collection />
+
+        <StandardCardCollection overrideItems={({ item, index })=>({
+          backgroundColor: index % 2 === 0 ? 'white' : 'lightgray',
+        })} />
 
         <ClientDependentComponent foo={''} />
 
