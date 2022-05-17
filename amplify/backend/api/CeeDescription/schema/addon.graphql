@@ -1,0 +1,11 @@
+
+input TodoInput {
+    id: ID
+    name: String!
+    description: String
+}
+
+type Mutation {
+    batchAddTodo(todo: TodoInput!): User
+    directAddUser(user: TodoInput!): User @function(name: "spotifyapi-${env}")
+}
