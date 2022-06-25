@@ -1,5 +1,5 @@
 export const handler = () => {
-    const hello: string = "Hello";
-    const ts: string = "TS";
+    const hello: string = "Hello, world ";
+    const ts: string = "TS one";
     console.log(hello, ts);
   }

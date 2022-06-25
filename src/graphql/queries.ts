@@ -2,6 +2,74 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const getElectricEnergy = /* GraphQL */ `
+  query GetElectricEnergy($id: ID!) {
+    getElectricEnergy(id: $id) {
+      id
+      energy
+      memo
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const listElectricEnergies = /* GraphQL */ `
+  query ListElectricEnergies(
+    $filter: ModelElectricEnergyFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listElectricEnergies(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        energy
+        memo
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncElectricEnergies = /* GraphQL */ `
+  query SyncElectricEnergies(
+    $filter: ModelElectricEnergyFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncElectricEnergies(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        energy
+        memo
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
 export const getAnswer = /* GraphQL */ `
   query GetAnswer($id: ID!) {
     getAnswer(id: $id) {

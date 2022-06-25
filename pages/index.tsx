@@ -38,7 +38,7 @@ const textState = atom({
         const idToken = user.signInUserSession.idToken.jwtToken
         console.log("fff");
         console.log(idToken);
-        const headers = {headers: { Authorization: `Bearer ${idToken}`},}; 
+        const headers = {headers: { Authorization: `${idToken}`},}; 
         console.log(headers);
         try {
           const { data } = await axios.get(

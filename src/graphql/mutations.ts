@@ -2,6 +2,57 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const createElectricEnergy = /* GraphQL */ `
+  mutation CreateElectricEnergy(
+    $input: CreateElectricEnergyInput!
+    $condition: ModelElectricEnergyConditionInput
+  ) {
+    createElectricEnergy(input: $input, condition: $condition) {
+      id
+      energy
+      memo
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const updateElectricEnergy = /* GraphQL */ `
+  mutation UpdateElectricEnergy(
+    $input: UpdateElectricEnergyInput!
+    $condition: ModelElectricEnergyConditionInput
+  ) {
+    updateElectricEnergy(input: $input, condition: $condition) {
+      id
+      energy
+      memo
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const deleteElectricEnergy = /* GraphQL */ `
+  mutation DeleteElectricEnergy(
+    $input: DeleteElectricEnergyInput!
+    $condition: ModelElectricEnergyConditionInput
+  ) {
+    deleteElectricEnergy(input: $input, condition: $condition) {
+      id
+      energy
+      memo
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
 export const createAnswer = /* GraphQL */ `
   mutation CreateAnswer(
     $input: CreateAnswerInput!

@@ -2,6 +2,48 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const onCreateElectricEnergy = /* GraphQL */ `
+  subscription OnCreateElectricEnergy {
+    onCreateElectricEnergy {
+      id
+      energy
+      memo
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const onUpdateElectricEnergy = /* GraphQL */ `
+  subscription OnUpdateElectricEnergy {
+    onUpdateElectricEnergy {
+      id
+      energy
+      memo
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
+export const onDeleteElectricEnergy = /* GraphQL */ `
+  subscription OnDeleteElectricEnergy {
+    onDeleteElectricEnergy {
+      id
+      energy
+      memo
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+    }
+  }
+`;
 export const onCreateAnswer = /* GraphQL */ `
   subscription OnCreateAnswer {
     onCreateAnswer {

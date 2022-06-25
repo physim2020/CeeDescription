@@ -44,18 +44,18 @@ const params =  {
   "name": "TEST"
 }
 
-exports.handler = async (event) => {
+exports.handler = async (params) => {
 
-  // console.log('event: ', event);
+  console.log('event: ', params.event);
 
-  // var token = event.request.headers.authorization;
+  const accessToken = params.event.headers.Authorization;
 
   const client = new AWSAppSyncClient({
     url: url,
     region: region,
     auth: {
-      type: "API_KEY",
-      apiKey: "da2-7drqnpcpt5h4rfyuhjl35q7al4"
+      jwtToken: accessToken,
+      type: AUTH_TYPE.AMAZON_COGNITO_USER_POOLS,
     },
     disableOffline: true
   })

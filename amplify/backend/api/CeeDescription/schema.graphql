@@ -1,3 +1,9 @@
+type ElectricEnergy @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  energy: Int
+  memo: String
+}
+
 type Answer @model @auth(rules: [{allow: public}]) {
   id: ID!
   title: String

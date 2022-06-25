@@ -2,18 +2,46 @@
 /* eslint-disable */
 //  This file was automatically generated and should not be edited.
 
-export type CreateAnswerInput = {
+export type CreateElectricEnergyInput = {
   id?: string | null,
-  title?: string | null,
+  energy?: number | null,
+  memo?: string | null,
   _version?: number | null,
 };
 
-export type ModelAnswerConditionInput = {
-  title?: ModelStringInput | null,
-  and?: Array< ModelAnswerConditionInput | null > | null,
-  or?: Array< ModelAnswerConditionInput | null > | null,
-  not?: ModelAnswerConditionInput | null,
+export type ModelElectricEnergyConditionInput = {
+  energy?: ModelIntInput | null,
+  memo?: ModelStringInput | null,
+  and?: Array< ModelElectricEnergyConditionInput | null > | null,
+  or?: Array< ModelElectricEnergyConditionInput | null > | null,
+  not?: ModelElectricEnergyConditionInput | null,
 };
+
+export type ModelIntInput = {
+  ne?: number | null,
+  eq?: number | null,
+  le?: number | null,
+  lt?: number | null,
+  ge?: number | null,
+  gt?: number | null,
+  between?: Array< number | null > | null,
+  attributeExists?: boolean | null,
+  attributeType?: ModelAttributeTypes | null,
+};
+
+export enum ModelAttributeTypes {
+  binary = "binary",
+  binarySet = "binarySet",
+  bool = "bool",
+  list = "list",
+  map = "map",
+  number = "number",
+  numberSet = "numberSet",
+  string = "string",
+  stringSet = "stringSet",
+  _null = "_null",
+}
+
 
 export type ModelStringInput = {
   ne?: string | null,
@@ -31,20 +59,6 @@ export type ModelStringInput = {
   size?: ModelSizeInput | null,
 };
 
-export enum ModelAttributeTypes {
-  binary = "binary",
-  binarySet = "binarySet",
-  bool = "bool",
-  list = "list",
-  map = "map",
-  number = "number",
-  numberSet = "numberSet",
-  string = "string",
-  stringSet = "stringSet",
-  _null = "_null",
-}
-
-
 export type ModelSizeInput = {
   ne?: number | null,
   eq?: number | null,
@@ -53,6 +67,43 @@ export type ModelSizeInput = {
   ge?: number | null,
   gt?: number | null,
   between?: Array< number | null > | null,
+};
+
+export type ElectricEnergy = {
+  __typename: "ElectricEnergy",
+  id: string,
+  energy?: number | null,
+  memo?: string | null,
+  createdAt: string,
+  updatedAt: string,
+  _version: number,
+  _deleted?: boolean | null,
+  _lastChangedAt: number,
+};
+
+export type UpdateElectricEnergyInput = {
+  id: string,
+  energy?: number | null,
+  memo?: string | null,
+  _version?: number | null,
+};
+
+export type DeleteElectricEnergyInput = {
+  id: string,
+  _version?: number | null,
+};
+
+export type CreateAnswerInput = {
+  id?: string | null,
+  title?: string | null,
+  _version?: number | null,
+};
+
+export type ModelAnswerConditionInput = {
+  title?: ModelStringInput | null,
+  and?: Array< ModelAnswerConditionInput | null > | null,
+  or?: Array< ModelAnswerConditionInput | null > | null,
+  not?: ModelAnswerConditionInput | null,
 };
 
 export type Answer = {
@@ -202,12 +253,13 @@ export type DeleteHomeInput = {
   _version?: number | null,
 };
 
-export type ModelAnswerFilterInput = {
+export type ModelElectricEnergyFilterInput = {
   id?: ModelIDInput | null,
-  title?: ModelStringInput | null,
-  and?: Array< ModelAnswerFilterInput | null > | null,
-  or?: Array< ModelAnswerFilterInput | null > | null,
-  not?: ModelAnswerFilterInput | null,
+  energy?: ModelIntInput | null,
+  memo?: ModelStringInput | null,
+  and?: Array< ModelElectricEnergyFilterInput | null > | null,
+  or?: Array< ModelElectricEnergyFilterInput | null > | null,
+  not?: ModelElectricEnergyFilterInput | null,
 };
 
 export type ModelIDInput = {
@@ -224,6 +276,21 @@ export type ModelIDInput = {
   attributeExists?: boolean | null,
   attributeType?: ModelAttributeTypes | null,
   size?: ModelSizeInput | null,
+};
+
+export type ModelElectricEnergyConnection = {
+  __typename: "ModelElectricEnergyConnection",
+  items:  Array<ElectricEnergy | null >,
+  nextToken?: string | null,
+  startedAt?: number | null,
+};
+
+export type ModelAnswerFilterInput = {
+  id?: ModelIDInput | null,
+  title?: ModelStringInput | null,
+  and?: Array< ModelAnswerFilterInput | null > | null,
+  or?: Array< ModelAnswerFilterInput | null > | null,
+  not?: ModelAnswerFilterInput | null,
 };
 
 export type ModelAnswerConnection = {
@@ -278,6 +345,63 @@ export type ModelHomeConnection = {
   items:  Array<Home | null >,
   nextToken?: string | null,
   startedAt?: number | null,
+};
+
+export type CreateElectricEnergyMutationVariables = {
+  input: CreateElectricEnergyInput,
+  condition?: ModelElectricEnergyConditionInput | null,
+};
+
+export type CreateElectricEnergyMutation = {
+  createElectricEnergy?:  {
+    __typename: "ElectricEnergy",
+    id: string,
+    energy?: number | null,
+    memo?: string | null,
+    createdAt: string,
+    updatedAt: string,
+    _version: number,
+    _deleted?: boolean | null,
+    _lastChangedAt: number,
+  } | null,
+};
+
+export type UpdateElectricEnergyMutationVariables = {
+  input: UpdateElectricEnergyInput,
+  condition?: ModelElectricEnergyConditionInput | null,
+};
+
+export type UpdateElectricEnergyMutation = {
+  updateElectricEnergy?:  {
+    __typename: "ElectricEnergy",
+    id: string,
+    energy?: number | null,
+    memo?: string | null,
+    createdAt: string,
+    updatedAt: string,
+    _version: number,
+    _deleted?: boolean | null,
+    _lastChangedAt: number,
+  } | null,
+};
+
+export type DeleteElectricEnergyMutationVariables = {
+  input: DeleteElectricEnergyInput,
+  condition?: ModelElectricEnergyConditionInput | null,
+};
+
+export type DeleteElectricEnergyMutation = {
+  deleteElectricEnergy?:  {
+    __typename: "ElectricEnergy",
+    id: string,
+    energy?: number | null,
+    memo?: string | null,
+    createdAt: string,
+    updatedAt: string,
+    _version: number,
+    _deleted?: boolean | null,
+    _lastChangedAt: number,
+  } | null,
 };
 
 export type CreateAnswerMutationVariables = {
@@ -499,6 +623,75 @@ export type DeleteHomeMutation = {
     _version: number,
     _deleted?: boolean | null,
     _lastChangedAt: number,
+  } | null,
+};
+
+export type GetElectricEnergyQueryVariables = {
+  id: string,
+};
+
+export type GetElectricEnergyQuery = {
+  getElectricEnergy?:  {
+    __typename: "ElectricEnergy",
+    id: string,
+    energy?: number | null,
+    memo?: string | null,
+    createdAt: string,
+    updatedAt: string,
+    _version: number,
+    _deleted?: boolean | null,
+    _lastChangedAt: number,
+  } | null,
+};
+
+export type ListElectricEnergiesQueryVariables = {
+  filter?: ModelElectricEnergyFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+};
+
+export type ListElectricEnergiesQuery = {
+  listElectricEnergies?:  {
+    __typename: "ModelElectricEnergyConnection",
+    items:  Array< {
+      __typename: "ElectricEnergy",
+      id: string,
+      energy?: number | null,
+      memo?: string | null,
+      createdAt: string,
+      updatedAt: string,
+      _version: number,
+      _deleted?: boolean | null,
+      _lastChangedAt: number,
+    } | null >,
+    nextToken?: string | null,
+    startedAt?: number | null,
+  } | null,
+};
+
+export type SyncElectricEnergiesQueryVariables = {
+  filter?: ModelElectricEnergyFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+  lastSync?: number | null,
+};
+
+export type SyncElectricEnergiesQuery = {
+  syncElectricEnergies?:  {
+    __typename: "ModelElectricEnergyConnection",
+    items:  Array< {
+      __typename: "ElectricEnergy",
+      id: string,
+      energy?: number | null,
+      memo?: string | null,
+      createdAt: string,
+      updatedAt: string,
+      _version: number,
+      _deleted?: boolean | null,
+      _lastChangedAt: number,
+    } | null >,
+    nextToken?: string | null,
+    startedAt?: number | null,
   } | null,
 };
 
@@ -769,6 +962,48 @@ export type SyncHomesQuery = {
     } | null >,
     nextToken?: string | null,
     startedAt?: number | null,
+  } | null,
+};
+
+export type OnCreateElectricEnergySubscription = {
+  onCreateElectricEnergy?:  {
+    __typename: "ElectricEnergy",
+    id: string,
+    energy?: number | null,
+    memo?: string | null,
+    createdAt: string,
+    updatedAt: string,
+    _version: number,
+    _deleted?: boolean | null,
+    _lastChangedAt: number,
+  } | null,
+};
+
+export type OnUpdateElectricEnergySubscription = {
+  onUpdateElectricEnergy?:  {
+    __typename: "ElectricEnergy",
+    id: string,
+    energy?: number | null,
+    memo?: string | null,
+    createdAt: string,
+    updatedAt: string,
+    _version: number,
+    _deleted?: boolean | null,
+    _lastChangedAt: number,
+  } | null,
+};
+
+export type OnDeleteElectricEnergySubscription = {
+  onDeleteElectricEnergy?:  {
+    __typename: "ElectricEnergy",
+    id: string,
+    energy?: number | null,
+    memo?: string | null,
+    createdAt: string,
+    updatedAt: string,
+    _version: number,
+    _deleted?: boolean | null,
+    _lastChangedAt: number,
   } | null,
 };
 
