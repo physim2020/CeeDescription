@@ -30,7 +30,7 @@ const gql = require('graphql-tag');
 
 const listTempUserDatas = gql(`
  mutation MyMutation {
-  createUser(input: {name: "hama"}) {
+  createUser(input: {name: "hamanext"}) {
     id
     name
   }

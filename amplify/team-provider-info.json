@@ -16,7 +16,7 @@
       "function": {
         "spotifyapi": {
           "deploymentBucketName": "amplify-amplify5c97d7b4c3254-staging-31819-deployment",
-          "s3Key": "amplify-builds/spotifyapi-5a727053304e2b69724e-build.zip"
+          "s3Key": "amplify-builds/spotifyapi-546f39306b706f545543-build.zip"
         },
         "sendSummary": {
           "deploymentBucketName": "amplify-amplify5c97d7b4c3254-staging-31819-deployment",
