@@ -3,18 +3,32 @@
     "CeeDescription": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
-      "dependsOn": [],
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "CeeDescription",
+          "attributes": [
+            "UserPoolId"
+          ]
+        }
+      ],
       "output": {
         "authConfig": {
           "defaultAuthentication": {
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
               "apiKeyExpirationDays": 30,
-              "apiKeyExpirationDate": "2022-07-16T16:02:49.776Z",
+              "apiKeyExpirationDate": "2022-07-25T10:02:25.042Z",
               "description": "api key description"
             }
           },
           "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+              "userPoolConfig": {
+                "userPoolId": "authCeeDescription"
+              }
+            },
             {
               "authenticationType": "AWS_IAM"
             }

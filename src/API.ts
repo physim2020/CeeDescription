@@ -185,6 +185,7 @@ export type User = {
   _version: number,
   _deleted?: boolean | null,
   _lastChangedAt: number,
+  owner?: string | null,
 };
 
 export type UpdateUserInput = {
@@ -527,6 +528,7 @@ export type CreateUserMutation = {
     _version: number,
     _deleted?: boolean | null,
     _lastChangedAt: number,
+    owner?: string | null,
   } | null,
 };
 
@@ -545,6 +547,7 @@ export type UpdateUserMutation = {
     _version: number,
     _deleted?: boolean | null,
     _lastChangedAt: number,
+    owner?: string | null,
   } | null,
 };
 
@@ -563,6 +566,7 @@ export type DeleteUserMutation = {
     _version: number,
     _deleted?: boolean | null,
     _lastChangedAt: number,
+    owner?: string | null,
   } | null,
 };
 
@@ -841,6 +845,7 @@ export type GetUserQuery = {
     _version: number,
     _deleted?: boolean | null,
     _lastChangedAt: number,
+    owner?: string | null,
   } | null,
 };
 
@@ -862,6 +867,7 @@ export type ListUsersQuery = {
       _version: number,
       _deleted?: boolean | null,
       _lastChangedAt: number,
+      owner?: string | null,
     } | null >,
     nextToken?: string | null,
     startedAt?: number | null,
@@ -887,6 +893,7 @@ export type SyncUsersQuery = {
       _version: number,
       _deleted?: boolean | null,
       _lastChangedAt: number,
+      owner?: string | null,
     } | null >,
     nextToken?: string | null,
     startedAt?: number | null,
@@ -1095,6 +1102,7 @@ export type OnCreateUserSubscription = {
     _version: number,
     _deleted?: boolean | null,
     _lastChangedAt: number,
+    owner?: string | null,
   } | null,
 };
 
@@ -1108,6 +1116,7 @@ export type OnUpdateUserSubscription = {
     _version: number,
     _deleted?: boolean | null,
     _lastChangedAt: number,
+    owner?: string | null,
   } | null,
 };
 
@@ -1121,6 +1130,7 @@ export type OnDeleteUserSubscription = {
     _version: number,
     _deleted?: boolean | null,
     _lastChangedAt: number,
+    owner?: string | null,
   } | null,
 };
 

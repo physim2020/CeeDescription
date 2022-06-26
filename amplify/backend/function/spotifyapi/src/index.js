@@ -25,6 +25,7 @@ Amplify Params - DO NOT EDIT */
 require('isomorphic-fetch');
 const aws = require('aws-sdk');
 const AWSAppSyncClient = require('aws-appsync').default;
+const { AUTH_TYPE } = require('aws-appsync')
 const gql = require('graphql-tag');
 
 const listTempUserDatas = gql(`
@@ -44,11 +45,11 @@ const params =  {
   "name": "TEST"
 }
 
-exports.handler = async (params) => {
+exports.handler = async (event) => {
 
-  console.log('event: ', params.event);
+  console.log('event: ', event);
 
-  const accessToken = params.event.headers.Authorization;
+  const accessToken = event.headers.Authorization;
 
   const client = new AWSAppSyncClient({
     url: url,
@@ -70,7 +71,14 @@ exports.handler = async (params) => {
         });
 
    console.log('Invoked.', response);
-    return response.data.createUser;
+    return {
+      statusCode: 200,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Content-Type"
+      },
+      body: JSON.stringify(response.data.createUser)
+    }
   } catch (err) {
     console.log('error posting to appsync: ', err)
 

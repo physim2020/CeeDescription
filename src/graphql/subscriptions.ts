@@ -132,6 +132,7 @@ export const onCreateUser = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      owner
     }
   }
 `;
@@ -145,6 +146,7 @@ export const onUpdateUser = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      owner
     }
   }
 `;
@@ -158,6 +160,7 @@ export const onDeleteUser = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      owner
     }
   }
 `;

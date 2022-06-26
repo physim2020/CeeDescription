@@ -230,13 +230,15 @@ export const schema = {
                     "properties": {
                         "rules": [
                             {
-                                "allow": "public",
+                                "provider": "userPools",
+                                "ownerField": "owner",
+                                "allow": "owner",
                                 "operations": [
                                     "create",
-                                    "update",
                                     "delete",
-                                    "read"
-                                ]
+                                    "update"
+                                ],
+                                "identityClaim": "cognito:username"
                             }
                         ]
                     }
