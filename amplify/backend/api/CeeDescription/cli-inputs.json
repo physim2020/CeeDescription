@@ -3,20 +3,19 @@
   "serviceConfiguration": {
     "apiName": "CeeDescription",
     "serviceName": "AppSync",
-    "gqlSchemaPath": "/Users/t.hamaguchi/projects/CeeDescription/amplify/backend/api/CeeDescription/schema.graphql",
+    "gqlSchemaPath": "/tmp/amplify-e7a10198-f82b-40b8-b3df-c7e443e2d9ba/amplify/backend/api/CeeDescription/schema.graphql",
     "defaultAuthType": {
       "mode": "API_KEY",
-      "expirationTime": 30,
-      "apiKeyExpirationDate": "2022-07-25T10:02:25.042Z",
-      "keyDescription": "api key description"
+      "keyDescription": "api key description",
+      "expirationTime": 30
     },
     "additionalAuthTypes": [
       {
-        "mode": "AMAZON_COGNITO_USER_POOLS",
-        "cognitoUserPoolId": "authCeeDescription"
+        "mode": "AWS_IAM"
       },
       {
-        "mode": "AWS_IAM"
+        "mode": "AMAZON_COGNITO_USER_POOLS",
+        "cognitoUserPoolId": "authCeeDescription"
       }
     ],
     "conflictResolution": {

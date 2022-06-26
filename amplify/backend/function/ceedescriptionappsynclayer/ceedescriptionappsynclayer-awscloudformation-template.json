@@ -20,7 +20,7 @@
     }
   },
   "Resources": {
-    "LambdaLayerVersion3895d116": {
+    "LambdaLayerVersion02fa3f4e": {
       "Type": "AWS::Lambda::LayerVersion",
       "Properties": {
         "CompatibleRuntimes": {
@@ -51,29 +51,29 @@
       "DeletionPolicy": "Delete",
       "UpdateReplacePolicy": "Retain"
     },
-    "LambdaLayerPermissionAwsAccounts1086380019913895d116": {
+    "LambdaLayerPermissionAwsAccounts10863800199102fa3f4e": {
       "Type": "AWS::Lambda::LayerVersionPermission",
       "Properties": {
         "Action": "lambda:GetLayerVersion",
         "LayerVersionArn": {
-          "Ref": "LambdaLayerVersion3895d116"
+          "Ref": "LambdaLayerVersion02fa3f4e"
         },
         "Principal": "108638001991"
       }
     },
-    "LambdaLayerPermissionPrivate3895d116": {
+    "LambdaLayerPermissionPrivate02fa3f4e": {
       "Type": "AWS::Lambda::LayerVersionPermission",
       "Properties": {
         "Action": "lambda:GetLayerVersion",
         "LayerVersionArn": {
-          "Ref": "LambdaLayerVersion3895d116"
+          "Ref": "LambdaLayerVersion02fa3f4e"
         },
         "Principal": {
           "Ref": "AWS::AccountId"
         }
       }
     },
-    "LambdaLayerVersion3b552380": {
+    "LambdaLayerVersiona61b24c2": {
       "Type": "AWS::Lambda::LayerVersion",
       "Properties": {
         "CompatibleRuntimes": [
@@ -83,9 +83,9 @@
           "S3Bucket": {
             "Ref": "deploymentBucketName"
           },
-          "S3Key": "amplify-builds/ceedescriptionappsynclayer-LambdaLayerVersion3b552380-build.zip"
+          "S3Key": "amplify-builds/ceedescriptionappsynclayer-LambdaLayerVersiona61b24c2-build.zip"
         },
-        "Description": "Updated layer version 2022-05-01T10:00:43.782Z",
+        "Description": "Updated layer version 2022-06-26T13:46:42.443Z",
         "LayerName": {
           "Fn::Sub": [
             "ceedescriptionappsynclayer-${env}",
@@ -100,19 +100,109 @@
       "DeletionPolicy": "Delete",
       "UpdateReplacePolicy": "Retain"
     },
-    "LambdaLayerPermissionAwsAccounts1086380019913b552380": {
+    "LambdaLayerPermissionAwsAccounts108638001991a61b24c2": {
       "Type": "AWS::Lambda::LayerVersionPermission",
       "Properties": {
         "Action": "lambda:GetLayerVersion",
-        "LayerVersionArn": "arn:aws:lambda:ap-northeast-1:108638001991:layer:ceedescriptionappsynclayer-staging:1",
+        "LayerVersionArn": "arn:aws:lambda:ap-northeast-1:108638001991:layer:ceedescriptionappsynclayer-staging:5",
         "Principal": "108638001991"
       }
     },
-    "LambdaLayerPermissionPrivate3b552380": {
+    "LambdaLayerPermissionPrivatea61b24c2": {
       "Type": "AWS::Lambda::LayerVersionPermission",
       "Properties": {
         "Action": "lambda:GetLayerVersion",
-        "LayerVersionArn": "arn:aws:lambda:ap-northeast-1:108638001991:layer:ceedescriptionappsynclayer-staging:1",
+        "LayerVersionArn": "arn:aws:lambda:ap-northeast-1:108638001991:layer:ceedescriptionappsynclayer-staging:5",
+        "Principal": {
+          "Ref": "AWS::AccountId"
+        }
+      }
+    },
+    "LambdaLayerVersionbf2ba242": {
+      "Type": "AWS::Lambda::LayerVersion",
+      "Properties": {
+        "CompatibleRuntimes": [
+          "nodejs14.x"
+        ],
+        "Content": {
+          "S3Bucket": {
+            "Ref": "deploymentBucketName"
+          },
+          "S3Key": "amplify-builds/ceedescriptionappsynclayer-LambdaLayerVersionbf2ba242-build.zip"
+        },
+        "Description": "Updated layer version 2022-06-26T12:46:01.162Z",
+        "LayerName": {
+          "Fn::Sub": [
+            "ceedescriptionappsynclayer-${env}",
+            {
+              "env": {
+                "Ref": "env"
+              }
+            }
+          ]
+        }
+      },
+      "DeletionPolicy": "Delete",
+      "UpdateReplacePolicy": "Retain"
+    },
+    "LambdaLayerPermissionAwsAccounts108638001991bf2ba242": {
+      "Type": "AWS::Lambda::LayerVersionPermission",
+      "Properties": {
+        "Action": "lambda:GetLayerVersion",
+        "LayerVersionArn": "arn:aws:lambda:ap-northeast-1:108638001991:layer:ceedescriptionappsynclayer-staging:4",
+        "Principal": "108638001991"
+      }
+    },
+    "LambdaLayerPermissionPrivatebf2ba242": {
+      "Type": "AWS::Lambda::LayerVersionPermission",
+      "Properties": {
+        "Action": "lambda:GetLayerVersion",
+        "LayerVersionArn": "arn:aws:lambda:ap-northeast-1:108638001991:layer:ceedescriptionappsynclayer-staging:4",
+        "Principal": {
+          "Ref": "AWS::AccountId"
+        }
+      }
+    },
+    "LambdaLayerVersionf880f21d": {
+      "Type": "AWS::Lambda::LayerVersion",
+      "Properties": {
+        "CompatibleRuntimes": [
+          "nodejs14.x"
+        ],
+        "Content": {
+          "S3Bucket": {
+            "Ref": "deploymentBucketName"
+          },
+          "S3Key": "amplify-builds/ceedescriptionappsynclayer-LambdaLayerVersionf880f21d-build.zip"
+        },
+        "Description": "Updated layer version 2022-06-26T12:37:30.247Z",
+        "LayerName": {
+          "Fn::Sub": [
+            "ceedescriptionappsynclayer-${env}",
+            {
+              "env": {
+                "Ref": "env"
+              }
+            }
+          ]
+        }
+      },
+      "DeletionPolicy": "Delete",
+      "UpdateReplacePolicy": "Retain"
+    },
+    "LambdaLayerPermissionAwsAccounts108638001991f880f21d": {
+      "Type": "AWS::Lambda::LayerVersionPermission",
+      "Properties": {
+        "Action": "lambda:GetLayerVersion",
+        "LayerVersionArn": "arn:aws:lambda:ap-northeast-1:108638001991:layer:ceedescriptionappsynclayer-staging:3",
+        "Principal": "108638001991"
+      }
+    },
+    "LambdaLayerPermissionPrivatef880f21d": {
+      "Type": "AWS::Lambda::LayerVersionPermission",
+      "Properties": {
+        "Action": "lambda:GetLayerVersion",
+        "LayerVersionArn": "arn:aws:lambda:ap-northeast-1:108638001991:layer:ceedescriptionappsynclayer-staging:3",
         "Principal": {
           "Ref": "AWS::AccountId"
         }
@@ -122,7 +212,7 @@
   "Outputs": {
     "Arn": {
       "Value": {
-        "Ref": "LambdaLayerVersion3895d116"
+        "Ref": "LambdaLayerVersion02fa3f4e"
       }
     }
   }

@@ -18,19 +18,18 @@
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
               "apiKeyExpirationDays": 30,
-              "apiKeyExpirationDate": "2022-07-25T10:02:25.042Z",
               "description": "api key description"
             }
           },
           "additionalAuthenticationProviders": [
             {
+              "authenticationType": "AWS_IAM"
+            },
+            {
               "authenticationType": "AMAZON_COGNITO_USER_POOLS",
               "userPoolConfig": {
                 "userPoolId": "authCeeDescription"
               }
-            },
-            {
-              "authenticationType": "AWS_IAM"
             }
           ]
         }
@@ -58,19 +57,19 @@
       "service": "Lambda",
       "dependsOn": [
         {
+          "category": "function",
+          "resourceName": "ceedescriptionappsynclayer",
+          "attributes": [
+            "Arn"
+          ]
+        },
+        {
           "category": "api",
           "resourceName": "CeeDescription",
           "attributes": [
             "GraphQLAPIIdOutput",
             "GraphQLAPIEndpointOutput",
             "GraphQLAPIKeyOutput"
-          ]
-        },
-        {
-          "category": "function",
-          "resourceName": "ceedescriptionappsynclayer",
-          "attributes": [
-            "Arn"
           ]
         }
       ]

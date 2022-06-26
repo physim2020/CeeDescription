@@ -24,7 +24,7 @@
         },
         "ceedescriptionappsynclayer": {
           "deploymentBucketName": "amplify-amplify5c97d7b4c3254-staging-31819-deployment",
-          "s3Key": "amplify-builds/ceedescriptionappsynclayer-LambdaLayerVersion3895d116-build.zip"
+          "s3Key": "amplify-builds/ceedescriptionappsynclayer-LambdaLayerVersion02fa3f4e-build.zip"
         }
       },
       "auth": {

@@ -55,6 +55,7 @@ export declare class Question {
 export declare class User {
   readonly id: string;
   readonly name?: string | null;
+  readonly hobby?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   constructor(init: ModelInit<User, UserMetaData>);
