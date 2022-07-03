@@ -15,7 +15,7 @@ export default function ItemCard2(props) {
       gap="0"
       direction="column"
       width="160px"
-      height="206px"
+      height="240px"
       position="relative"
       border="2px SOLID rgba(0,160,233,1)"
       padding="5px 6px 5px 6px"
@@ -340,6 +340,36 @@ export default function ItemCard2(props) {
           </View>
         </Flex>
       </Flex>
+      <View
+        width="132px"
+        height="27px"
+        shrink="0"
+        overflow="hidden"
+        position="relative"
+        padding="0px 0px 0px 0px"
+        {...getOverrideProps(overrides, "Frame 418")}
+      >
+        <Text
+          fontFamily="Inter"
+          fontSize="12px"
+          fontWeight="400"
+          color="rgba(0,0,0,1)"
+          lineHeight="20px"
+          textAlign="left"
+          display="flex"
+          direction="column"
+          justifyContent="flex-start"
+          width="71px"
+          height="18px"
+          position="absolute"
+          top="5px"
+          left="8px"
+          padding="0px 0px 0px 0px"
+          whiteSpace="pre-wrap"
+          children="Test"
+          {...getOverrideProps(overrides, "Test")}
+        ></Text>
+      </View>
     </Flex>
   );
 }
